@@ -1,0 +1,88 @@
+<po-page-edit
+  [p-disable-submit]="formEmbed.invalid">
+  <h1 class="po-md-12">Cole sua query em ADVPL e converta para Embedded SQL</h1>
+  <p>&nbsp;</p>
+  <h3 class="po-md-12">
+      O objetivo do Embedded SQL é facilitar a escrita e leitura de queries. Para isso,
+      foi definida uma sintaxe para que se possa escrever a query diretamente no código ADVPL,
+      sem a necessidade de ficar concatenando pedaços de string para compor a string final.
+  </h3>
+  <po-container>
+    OBS.: Os sinais de <b>+</b>&nbsp;<b class="no">não</b> podem ter espacos nas string's dos comandos e variavéis, conforme exemplo:<br/>
+(erro na conversão):&nbsp;<b>+&nbsp;&nbsp;xFilial("SA1")&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;</b>(sucesso na corretamente):&nbsp;<b>+xFilial("SA1")+</b>
+  </po-container>
+  <form #formEmbed="ngForm">
+
+    <po-divider class="po-md-12" p-label="Variaveis"></po-divider>
+
+    <po-input class="po-md-2"
+      name="alias"
+      [(ngModel)]="alias"
+      p-label="Alias tmp"
+      p-maxlength="10"
+      p-placeholder = "querytmp">
+    </po-input>
+
+    <po-input class="po-md-2"
+      name="variqry"
+      [(ngModel)]="variqry"
+      p-label="variavel query"
+      p-maxlength="10"
+      p-placeholder = "cquery">
+    </po-input>
+
+    <po-switch class="po-md-1"
+      name="temif"
+      [(ngModel)]="temif"
+      p-label-off="Não"
+      p-label-on="Sim"
+      p-label="usar if">
+    </po-switch>
+
+    <po-input class="po-md-2"
+      name="variif"
+      [(ngModel)]="variif"
+      p-label="variavel where"
+      p-maxlength="10"
+      p-placeholder = "cwhere">
+    </po-input>
+
+    <po-input class="po-md-2"
+      name="linfeed"
+      [(ngModel)]="linfeed"
+      p-label="quebra linha"
+      p-maxlength="15"
+      p-placeholder = "CHR(13)+CHR(10)">
+    </po-input>
+
+    <po-switch class="po-md-3"
+      name="chgqry"
+      [(ngModel)]="chgqry"
+      p-label-off="Não"
+      p-label-on="Sim"
+      p-label="usar o changequery (noparser)">
+    </po-switch>
+
+    <po-textarea class="po-md-6"
+      name="advpl"
+      id="advpl"
+      [(ngModel)]="advpl"
+      p-label="String query em ADVPL"
+      p-rows="10">
+    </po-textarea>
+
+    <po-textarea class="po-md-6"
+      name="sql"
+      id="sql"
+      [(ngModel)]="sql"
+      p-label="Embedded SQL"
+      p-rows="10">
+    </po-textarea>
+
+  </form>
+  <div class="po-row">
+    <po-button class="po-md-4" po-icon="po-icon po-icon-refresh" p-label="converter" (p-click)="save()"> </po-button>
+    <po-button class="po-md-4" po-icon="po-icon po-icon-copy" p-label="copiar Embedded SQL" [cdkCopyToClipboard]="sql" (p-click)="copyclipb()"> </po-button>
+    <po-button class="po-md-4" po-icon="po-icon po-icon-clear-content" p-label="limpar" (p-click)="clearfield()"> </po-button>
+  </div>
+</po-page-edit>

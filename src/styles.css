@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+#advpl span.po-field-title{
+  font-size: large ;
+}
+
+#sql span.po-field-title{
+  font-size: large ;
+}
+
+.po-container b.no{
+  color: red;
+}
