@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { EmbedqryComponent } from './embedqry/embedqry.component';
 
-
-const routes: Routes = [
-  { path: 'embedqry', component: EmbedqryComponent }
-];
+const routes: Routes = [];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
