@@ -1,6 +1,6 @@
 <po-page-edit
   [p-disable-submit]="formEmbed.invalid">
-  <h1 class="po-md-12">Cole sua query em ADVPL e converta para Embedded SQL</h1>
+  <h1 class="po-md-12">Cole sua query em ADVPL e converta para Embedded SQL/ADVPL</h1>
   <p>&nbsp;</p>
   <h3 class="po-md-12">
       O objetivo do Embedded SQL é facilitar a escrita e leitura de queries. Para isso,
@@ -9,7 +9,7 @@
   </h3>
   <po-container>
     OBS.: Os sinais de <b>+</b>&nbsp;<b class="no">não</b> podem ter espacos nas string's dos comandos e variavéis, conforme exemplo:<br/>
-(erro na conversão):&nbsp;<b>+&nbsp;&nbsp;xFilial("SA1")&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;</b>(sucesso na corretamente):&nbsp;<b>+xFilial("SA1")+</b>
+(erro na conversão):&nbsp;<b>+&nbsp;&nbsp;xFilial("SA1")&nbsp;&nbsp;+&nbsp;&nbsp;&nbsp;&nbsp;</b>(sucesso na conversão):&nbsp;<b>+xFilial("SA1")+</b>
   </po-container>
   <form #formEmbed="ngForm">
 
@@ -75,7 +75,7 @@
       name="sql"
       id="sql"
       [(ngModel)]="sql"
-      p-label="Embedded SQL"
+      p-label="Embedded SQL/ADVPL"
       p-rows="10">
     </po-textarea>
 
